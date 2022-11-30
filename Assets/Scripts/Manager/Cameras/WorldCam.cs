@@ -9,7 +9,7 @@ public class WorldCam : MonoBehaviour
 
     void Update()
     {        
-        Vector3 targetPosition = GameObject.Find(TurnManager.ActiveObject()).gameObject.transform.GetChild(0).transform.position + distanceFromThePlayer;
+        Vector3 targetPosition = GameObject.Find(TurnManager.ActiveObject()).gameObject.transform.GetChild(1).transform.position + distanceFromThePlayer;
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
     }

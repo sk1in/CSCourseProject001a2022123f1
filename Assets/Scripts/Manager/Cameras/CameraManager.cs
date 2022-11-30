@@ -18,7 +18,7 @@ public class CameraManager : MonoBehaviour
         //This enables Main Camera
         m_MainCamera.enabled = true;
         //Use this to disable secondary Camera
-        m_CameraTwo = GameObject.Find(TurnManager.ActiveObject()).gameObject.transform.GetChild(5).GetComponent<Camera>();
+        m_CameraTwo = GameObject.Find(TurnManager.ActiveObject()).gameObject.transform.GetChild(1).GetComponent<Camera>();
         //m_CameraTwo = GameObject.Find(TurnManager.ActiveObject()).gameObject.transform.GetChild(1).GetComponent<Camera>();
         Debug.Log("008     " + m_CameraTwo);
         m_CameraTwo.enabled = false;
