@@ -7,7 +7,9 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private PlayerTurn playerTurn;
     [SerializeField] private Rigidbody characterBody;
     [SerializeField] private float walkingSpeed = 2f;
-    
+    Vector3 position;
+    bool going;
+
     private void Start()
     {
         Cursor.visible = false;
@@ -21,6 +23,7 @@ public class CharacterController : MonoBehaviour
             {
                 //transform.Rotate(transform.up * rotationSpeed * Time.deltaTime * Input.GetAxis("Horizontal"));
                 transform.Translate(transform.right * walkingSpeed * Time.deltaTime * Input.GetAxis("Horizontal"), Space.World);
+                going = true;
             }
 
             if (Input.GetAxis("Vertical") != 0)
@@ -34,6 +37,10 @@ public class CharacterController : MonoBehaviour
                 Jump();
             }
         }
+
+        //position = transform.position;
+        //Debug.Log("010a " + position);
+
     }
 
     private void Jump()
@@ -61,5 +68,11 @@ public class CharacterController : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         Debug.Log("Collide");
+    }
+
+
+    public bool GoingHorizontal()
+    {
+        return going;
     }
 }
