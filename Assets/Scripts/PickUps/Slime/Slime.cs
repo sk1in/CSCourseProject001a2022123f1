@@ -12,8 +12,8 @@ public class Slime : MonoBehaviour
     [SerializeField] GameObject signHorizontal;
     [SerializeField] GameObject signVertical;
     [SerializeField] GameObject dropPosition;
-    [SerializeField] GameObject dropFromHorizontal;
-    [SerializeField] GameObject dropFromVertical;
+    //[SerializeField] GameObject dropFromHorizontal;
+    //[SerializeField] GameObject dropFromVertical;
     [SerializeField] GameObject weaponHolder;
 
     Vector3 isIdle;
@@ -22,10 +22,17 @@ public class Slime : MonoBehaviour
     GameObject resetThisHolder;
     GameObject resetThisSignHorizontal;
     GameObject resetThisSignVertical;
+    GameObject dropFromVertical, dropFromHorizontal;
 
     public int amount = 4;
     float distance;
     float nextPosition = 0f;
+
+    private void Start()
+    {
+        dropFromVertical = GameObject.Find(TurnManager.ActiveObject()).transform.GetChild(2).gameObject;        
+        dropFromHorizontal = GameObject.Find(TurnManager.ActiveObject()).transform.GetChild(3).gameObject;        
+    }
 
     void Update()
     {

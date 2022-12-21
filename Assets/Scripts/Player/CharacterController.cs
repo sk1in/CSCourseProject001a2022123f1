@@ -65,12 +65,27 @@ public class CharacterController : MonoBehaviour
         return result;
     }
 
-    private void OnParticleCollision(GameObject other)
+    //private void OnParticleCollision(GameObject other)
+    //{
+    //    Debug.Log("Collide");
+    //}
+
+    public void TakeDamage(float damage)
     {
-        Debug.Log("Collide");
+        Debug.Log("22a3 :  " + damage);
+        //currentHealth -= damage;
+
+        //healthBar.fillAmount = currentHealth / maxHealth;
+
+        //if (currentHealth <= 0)
+        //{
+        //    // Set back to initial position
+        //    //transform.position = initialPosition;
+        //    //transform.eulerAngles = initialRotation;
+
+        //    Destroy(gameObject);
+        //}
     }
-
-
     public bool GoingHorizontal()
     {
         return going;

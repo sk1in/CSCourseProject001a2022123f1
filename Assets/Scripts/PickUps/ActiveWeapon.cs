@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class ActiveWeapon : MonoBehaviour
 {
-    [SerializeField] GameObject weaponHolder;
+    //[SerializeField] GameObject weaponHolder;
+    private GameObject weaponHolder;
     public bool active;
+
+
+    private void Start()
+    {
+        weaponHolder = GameObject.Find(TurnManager.ActiveObject()).transform.GetChild(0).GetChild(2).GetChild(0).GetChild(1).GetChild(0).gameObject;
+    }
+
+
 
     void Update()
     {

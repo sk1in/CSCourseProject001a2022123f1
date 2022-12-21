@@ -5,11 +5,27 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public ParticleSystem particleSys;
-    public Transform shootingPoint;
+    //[SerializeField] private TurnManager playerActive;
+    private Transform shootingPoint;
    
     public float moveSpeed = 5.0f;
     float changeAngleX;
     float changeAngleY;
+
+    //private void Awake()
+    //{    
+    //    shootingPoint = GameObject.Find(TurnManager.ActiveObject()).transform.GetChild(2).GetChild(0).transform;
+    //    //playerActive.transform.GetChild(2).GetChild(0).GetChild(0).transform;
+
+    //    Debug.Log("16-0 " + shootingPoint);
+    //}
+
+    private void Start()
+    {
+        //Out of bounds - Missing when running since object moves to its place of use. It exists in 02000, child 0 - child 2 ...
+        //shootingPoint = GameObject.Find(TurnManager.ActiveObject()).transform.GetChild(2).GetChild(0).GetChild(0).transform;
+        shootingPoint = GameObject.Find(TurnManager.ActiveObject()).transform.GetChild(0).GetChild(2).GetChild(0).GetChild(0).GetChild(0).transform;
+    }
 
     private void Update()
     {
